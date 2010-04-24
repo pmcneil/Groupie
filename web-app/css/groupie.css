@@ -1,0 +1,409 @@
+/* 
+    Document   : groupie
+    Created on : 05/08/2009, 3:16:52 PM
+    Author     : pmcneil
+    Description:
+        This is the base application style for tags and tables etc.
+*/
+
+body {
+    font-family: Verdana, 'DejaVu Sans', sans-serif;
+}
+.boxy table, tr, td  {
+    border: none;
+}
+.prop{
+    text-align: left;
+    display:table-row;
+}
+.name {
+    text-align: left;
+    font-weight: bold;
+    padding-right: 10px;
+    display: table-cell;
+    vertical-align: top;
+}
+.value {
+    text-align: left;
+    display: table-cell;
+    vertical-align: top;
+}
+
+.toggle {
+    text-align: left;
+    margin: 10px 0;
+}
+
+.options {
+    margin-left: 20px;
+    display: table-row-group;
+}
+
+.optionsOpen {
+    text-align: left;
+    font-weight: bold;
+    padding-left: 20px;
+    margin: 10px 0 10px 0;
+    background-image: url(../images/icons/minimize.gif);
+    background-repeat: no-repeat;
+    background-position: left;
+
+}
+
+.optionsClosed {
+    text-align: left;
+    font-weight: bold;
+    padding-left: 20px;
+    margin: 10px 0 10px 0;
+    background-image: url(../images/icons/maximize.gif);
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+.shortcut {
+    font-variant: small-caps;
+    font-size: 0.8em;
+    float: right;
+    color: #ddd;
+}
+
+.menu * a {
+    text-decoration: none;
+}
+
+.menu * a[name]
+{
+    cursor: default;
+}
+.menu * a.editMode {
+    color: red;
+}
+
+.menu a.disabled {
+    color: #aaa;
+}
+
+.subMenuHeading,
+.editMenu a.subEditMenu {
+    background: url(../images/icons/silk/bullet_go.png) center right no-repeat;
+}
+.editMenu {
+    display: none;
+    width: 12em;
+}
+
+.menuSelected,
+.menu a.menuSelected{
+    color: silver;
+}
+#sidebar {
+    overflow: visible;
+}
+/* PAGINATION */
+
+.paginateButtons {
+    background: #fff url(../images/skin/shadow.jpg) bottom repeat-x;
+    border: 1px solid #ccc;
+    color: #666;
+    font-size: 1em;
+    overflow: hidden;
+    padding: 10px 3px;
+    margin-top: 10px;
+}
+.paginateButtons a {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-color: #ccc #aaa #aaa #ccc;
+    color: #666;
+    margin: 0 3px;
+    padding: 2px 6px;
+}
+.paginateButtons span {
+    padding: 2px 3px;
+}
+.paginateButtons a.upload {
+    background: #30A8C3 url(../images/icons/silk/page_white_get.png) no-repeat left;
+    padding: 3px 3px 3px 20px;
+    color: white;
+}
+.tabbox {
+    display: table-row;
+    width: 100%;
+    border: 1px solid #999;
+}
+.tabs {
+    text-align: left;
+    display: table-cell;
+    background-color: #999;
+    vertical-align: top;
+}
+.tabs ul {
+    margin: 0;
+    padding: 0;
+}
+.tabs ul li {
+    list-style: none;
+    color: white;
+    background: #30A8C3;
+    padding: 0.5em;
+    margin: 0.5em;
+    display: block;
+    text-align: left;
+    border: solid #ddd 1px;
+    cursor: pointer;
+}
+.tabs ul li:hover {
+    background: #5E5A5A;
+}
+.tabs ul li.selected {
+    background: #5E5A5A;
+}
+.embededMedia {
+    display: inline-block;
+}
+#mediaList{
+    display: table-cell;
+    padding: 10px;
+    width: 100%;
+    background: black;
+}
+#mediaList .media {
+    padding: 5px 5px 5px 20px;
+    border: 1px solid #ddd;
+}
+
+.media {
+    text-align: left;
+}
+.media.image {
+    background: white;
+    position: relative;
+}
+div.audio {
+    background: transparent url(/Groupie/images/icons/silk/music.png) left no-repeat;
+    padding-left: 20px;
+}
+.media a {
+    color: white;
+    text-decoration: none;
+}
+
+div.video {
+    background: transparent url(/Groupie/images/icons/silk/film.png) left no-repeat;
+    padding-left: 20px;
+}
+div.document {
+    background: transparent url(/Groupie/images/icons/silk/page_white.png) left no-repeat;
+    padding-left: 20px;
+}
+.image {
+    border: none;
+}
+
+
+/* MESSAGES AND ERRORS */
+
+.message {
+    background: #f3f8fc url(../images/skin/information.png) 8px 50% no-repeat;
+    border: 1px solid #b2d1ff;
+    color: #006dba;
+    margin: 10px 0 5px 0;
+    padding: 5px 5px 5px 30px;
+}
+
+div.errors {
+    background: #fff3f3;
+    border: 1px solid red;
+    color: #cc0000;
+    margin: 10px 0 5px 0;
+    padding: 5px 0 5px 0;
+}
+div.errors ul {
+    list-style: none;
+    padding: 0;
+}
+div.errors li {
+    background: url(../images/skin/exclamation.png) 8px 0% no-repeat;
+    line-height: 16px;
+    padding-left: 30px;
+}
+
+.errors select {
+    border: 1px solid red;
+}
+.errors input {
+    border: 1px solid red;
+}
+
+.errors textarea {
+    border: 1px solid red;
+}
+
+.spinner {
+    width: 50px;
+    padding: 5px;
+    position: fixed;
+    right: 0;
+    z-index: 2000;
+}
+
+#jSuggestContainer {
+    position:absolute;
+    font: 12px Tahoma;
+    border:1px solid #ffb931;
+    border-top:0;
+    background:#FFF;
+}
+
+.jSuggestLoading {
+    font-style:italic;
+    padding: 10px;
+}
+
+#jSuggestContainer ul, #jSuggestContainer ul li{
+    margin: 0;
+    padding:0;
+    list-style:none;
+}
+
+#jSuggestContainer ul li{
+    padding: 2px 4px;
+    border-bottom: 1px dotted #ffe594;
+    color:#666;
+    background:#fff9e7;
+    cursor:pointer
+}
+
+#jSuggestContainer ul li.last{
+    border-bottom: 0;
+}
+
+#jSuggestContainer ul li.jSuggestHover{
+    background:#ffeaaa;
+    color:#333;
+}
+
+#trail li {
+    background: green url(../images/trail-arrow.png) no-repeat right;
+    display: inline-block;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    width: 10em;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    padding-left: 0.3em;
+}
+
+#trail li.current {
+    background-color:lime;
+    color:black;
+    font-weight:bold;
+}
+#trail li.end {
+    background: green;
+}
+#trail li.end.current {
+    background: lime;
+}
+
+
+#trail {
+    background-color:transparent;
+    color:white;
+    font-size:1.1em;
+    margin: 0;
+    white-space: nowrap;
+}
+
+#_eventId_next {
+    background: url(../images/icons/silk/arrow_right.png) no-repeat right;
+    float: right;
+    padding-right: 17px;
+}
+
+#_eventId_back {
+    background: url(../images/icons/silk/arrow_left.png) no-repeat left;
+    float: left;
+    padding-left: 17px;
+}
+
+#_eventId_cancel {
+    background: green url(../images/icons/exit.png) no-repeat right;
+    padding-right: 17px;
+    color: white;
+}
+
+.sponsor {
+    text-align: left;
+    height: 500px;
+    overflow: auto;
+}
+
+
+
+.buttons {
+    background: #fff url(../images/skin/shadow.jpg) bottom repeat-x;
+    border: 1px solid #ccc;
+    color: #666;
+    font-size: 10px;
+    margin-top: 5px;
+    overflow: hidden;
+    padding: 0;
+    text-align: center;
+    height: 2em;
+}
+
+.buttons input {
+    margin: 3px;
+    overflow: visible;
+    padding: 2px 6px;
+    border: none;
+}
+.dialog {
+    padding: 10px;
+}
+.boxeddialog {
+    padding: 10px;
+    border: 1px solid black;
+    margin: 10px;
+    max-width: 800px;
+}
+.form {
+    border: 1px solid black;
+    margin: 10px;
+}
+.floatingform {
+    border: 1px solid black;
+    float: left;
+    margin-left: 10px;
+    max-width: 600px;
+}
+.left {
+    text-align: left;
+}
+.hidden {
+    display: none;
+}
+.cblist li {
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+
+}
+#memberDetailMsg {
+    position: absolute;
+}
+.toggleNext {
+    background: url(../images/icons/expand.png) no-repeat left;
+    padding-left: 20px;
+}
+.toggleNext:hover {
+    background: #eee url(../images/icons/expand.png) no-repeat left;
+    padding-left: 20px;
+}
+.member {
+    text-transform: uppercase;
+    color: gray;
+    font-size: smaller;
+}

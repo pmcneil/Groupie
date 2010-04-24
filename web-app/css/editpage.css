@@ -1,0 +1,157 @@
+/* 
+    Document   : editpage
+    Created on : 11/07/2009, 4:08:09 PM
+    Author     : pmcneil
+    Description:
+        Style for editing a page layout highlighting the page regions for editing
+*/
+
+.editMenu {
+    background: #30A8C3;
+    border: 1px solid #200;
+    color: white;
+    display: none;
+    width: 13em;
+}
+
+.editMenu .short {
+    display: none;
+}
+
+.editMenu ul {
+    margin: 0;
+    padding: 0;
+}
+
+.editMenu ul li,
+.editMenu ul li ul li {
+    list-style: none;
+    padding: 0.5em;
+    display: block;
+    text-align: left;
+    border-bottom: solid white 1px;
+    height: 1.2em;
+}
+
+.editMenu ul li:hover,
+.editMenu ul li:hover ul li:hover
+{
+    background-color: #5E5A5A;
+}
+
+.editMenu li:hover a,
+.editMenu li:hover ul li:hover a
+{
+    background-color: #5E5A5A;
+}
+.editMenu li:hover ul li a
+{
+    background-color: #30A8C3;
+}
+
+.editMenu a,
+.editMenu li ul li a{
+    color: white;
+    font-size: 1em;
+    line-height: 1;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+}
+
+.editMenu li ul{
+    background: #30A8C3;
+    border: 1px solid #200;
+    color: white;
+    width: 15em;
+    margin-left: 12.5em;
+    margin-top: -1.2em;
+    display: none;
+}
+
+.editMenu li:hover ul{
+    display: block;
+}
+
+.editMenu li:hover li ul
+{
+    display: none;
+}
+
+.editMenu li:hover li:hover ul
+{
+    display: block;
+}
+
+.toolbar {
+    background-color: #fff;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+.toolbar .long,
+.toolbar .shortcut,
+.toolbar .subMenuHeading{
+    display: none;
+}
+
+.toolbar ul {
+    padding: 0;
+    margin: 0;
+}
+
+.toolbar ul,
+.toolbar ul li ul{
+    display: block;
+}
+
+.toolbar ul li ul{
+    margin: 0.8em;
+}
+
+.toolbar ul li,
+.toolbar ul li ul li {
+    display: inline-block;
+    list-style: none;
+}
+
+.toolbar ul li a,
+.toolbar ul li ul li a {
+    background: #fff url(../images/skin/shadow.jpg) bottom repeat-x;
+    border: 1px solid #ccc;
+    color: black;
+    font-weight: normal;
+    font-size: 1.1em;
+    padding: 0.5em;
+    text-decoration: none;
+}
+.toolbar ul li a:hover,
+.toolbar ul li ul li a:hover {
+    background-color: #5E5A5A;
+}
+
+[contenteditable=true] {
+    border: orange 1px dashed;
+    margin: -1px;
+}
+
+#sourceEditor {
+    min-height: 3em;
+    min-width: 20em;
+}
+
+.showEmbeded {
+    background:silver;
+}
+.mediaPreview {
+    overflow: auto;
+    width: 105px;
+    height: 105px;
+    display:inline-block;
+}
+
+.mediaPreview img {
+    max-width: 100px;
+    max-height: 100px;
+}

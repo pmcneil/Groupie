@@ -1,0 +1,14 @@
+/* Basic code - don't modify */
+
+.menu { display: block; margin: 0; padding: 0; position: relative; }
+.menu li { display: block; list-style: none; margin: 0; padding: 0; float: left; position: relative; }
+.menu a { display: block; }
+.menu ul { display: none; position: absolute; left: 0; margin: 0; padding: 0; }
+* html .menu ul { line-height: 0; } /* IE6 "fix" */
+.menu ul a { zoom: 1; } /* IE6/7 fix */
+.menu ul li { float: none; }
+.menu ul ul { top: 0; }
+
+
+/* .menu ul a { border-bottom: none; } - I also needed this for IE6/7 */
+

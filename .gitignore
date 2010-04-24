@@ -1,0 +1,5 @@
+devDB*
+target/*
+jmtestfiles*
+*stacktrace.log
+TESTS-TestSuites.xml
