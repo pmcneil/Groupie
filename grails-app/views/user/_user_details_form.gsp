@@ -49,3 +49,11 @@
     <g:checkBox name="${entry.key.authority}" value="${entry.value}"/>
   </nerderg:formfield>
 </g:each>
+
+<h2>Mailing Lists:</h2>
+
+<g:each var="mlist" in="${com.nerderg.groupie.mail.MailingList.list()}">
+  <nerderg:formfield label="${mlist.name}">
+    <g:checkBox name="mlist-${mlist.id}" value="${mlist.users.contains(person)}"/>
+  </nerderg:formfield>
+</g:each>

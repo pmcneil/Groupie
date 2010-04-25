@@ -23,8 +23,10 @@ class MailingList {
     MailAccount rxMailServer
     MailAccount txMailServer
     Map params
-    
+
     static hasMany = [users: GUser]
+
+    static belongsTo = [ GUser ]
 
     static constraints = {
         name(blank: false, unique: true, maxSize: 100)

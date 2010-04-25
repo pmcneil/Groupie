@@ -27,7 +27,7 @@ class MailReaderService {
     def receive(server, port, type, ssl, user, pass, closure) {
         def store
         def folder
-        def storeType = type + ssl ? 's' : ''
+        def storeType = ssl ? type + 's' : type
 
         log.debug "Polling $user $server"
         try {

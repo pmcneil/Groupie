@@ -18,13 +18,14 @@ package com.nerderg.groupie
 
 import com.nerderg.groupie.Role
 import com.nerderg.groupie.member.Member
+import com.nerderg.groupie.mail.MailingList
 
 /**
  * User domain class.
  */
 class GUser implements Serializable {
     static transients = ['pass']
-    static hasMany = [authorities: Role]
+    static hasMany = [authorities: Role, mailingLists: MailingList]
     static belongsTo = Role
 
     /** Username */

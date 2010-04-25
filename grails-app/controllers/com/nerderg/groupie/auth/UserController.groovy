@@ -1,23 +1,24 @@
 /*
-    Copyright 2009, 2010 Peter McNeil
+Copyright 2009, 2010 Peter McNeil
 
-    This file is part of Groupie.
+This file is part of Groupie.
 
-    Licensed under the Apache License, Version 2.0 (the "License"); you may not 
-    use this file except in compliance with the License. You may obtain a copy 
-    of the License at http://www.apache.org/licenses/LICENSE-2.0 
+Licensed under the Apache License, Version 2.0 (the "License"); you may not 
+use this file except in compliance with the License. You may obtain a copy 
+of the License at http://www.apache.org/licenses/LICENSE-2.0 
     
-    Unless required by applicable law or agreed to in writing, software 
-    distributed under the License is distributed on an "AS IS" BASIS, 
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
-    See the License for the specific language governing permissions and 
-    limitations under the License. 
-*/
+Unless required by applicable law or agreed to in writing, software 
+distributed under the License is distributed on an "AS IS" BASIS, 
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+See the License for the specific language governing permissions and 
+limitations under the License. 
+ */
 
 package com.nerderg.groupie.auth
 
 import com.nerderg.groupie.GUser
 import com.nerderg.groupie.Role
+import com.nerderg.groupie.mail.MailingList
 import org.codehaus.groovy.grails.plugins.springsecurity.Secured
 import com.nerderg.groupie.BaseController
 
@@ -171,6 +172,7 @@ class UserController extends BaseController {
 
     def ajaxUpdate = {
 
+        log.debug "Ajax Update user with $params"
         def person = GUser.get(params.id)
         if (!person) {
             renderJson(errors: "<div class='errors'>User not found with id ${params.id}</div>")
@@ -187,9 +189,14 @@ class UserController extends BaseController {
 
         def oldPassword = person.passwd
         person.properties = params
-        if (!params.passwd.equals(oldPassword)) {
+        if (params.passwd && !params.passwd.equals(oldPassword)) {
+            log.debug "*** Changing password to $params.passwd"
             person.passwd = authenticateService.encodePassword(params.passwd)
+        } else {
+            person.passwd = oldPassword
         }
+            person.mailingLists.clear()
+            addMailingLists(person)
         if (person.save()) {
             Role.findAll().each { it.removeFromPeople(person) }
             addRoles(person)
@@ -199,6 +206,17 @@ class UserController extends BaseController {
         }
     }
 
+    def addMailingLists(person) {
+        log.debug "in addMailingLists with params $params"
+        for (String key in params.keySet()) {
+            if(key.startsWith('mlist-')) {
+                def id = key.substring(6).toLong()
+                def mlist = MailingList.get(id)
+                person.addToMailingLists(mlist)
+                log.debug "added $person to $mlist.name"
+            }
+        }
+    }
 
     def create = {
         def person = new GUser(params)
