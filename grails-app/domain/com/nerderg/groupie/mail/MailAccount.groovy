@@ -19,6 +19,7 @@ package com.nerderg.groupie.mail
 class MailAccount {
 
     String name
+    String email
     String server
     String username
     String password
@@ -32,6 +33,7 @@ class MailAccount {
 
     static constraints = {
         name(blank: false, unique: true, maxSize: 100)
+        email(blank: false, email: true, maxSize: 100 )
         server(blank: false, maxSize: 100)
         username(blank: false, maxSize: 100)
         password(blank: false, maxSize: 255)

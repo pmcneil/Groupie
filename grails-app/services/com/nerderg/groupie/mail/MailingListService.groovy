@@ -19,11 +19,18 @@ package com.nerderg.groupie.mail
 import javax.mail.Flags
 import javax.mail.Message
 import com.nerderg.groupie.GUser
+import org.springframework.mail.MailException
+import org.springframework.mail.SimpleMailMessage
+import javax.mail.MessagingException
+import javax.mail.internet.MimeMessage
+import javax.mail.internet.InternetAddress
+
 
 class MailingListService {
 
     boolean transactional = true
     def mailReaderService
+    def javaMailSender
 
     def poll() {
         def mailingLists = MailingList.list()
@@ -33,8 +40,11 @@ class MailingListService {
             mailReaderService.receive(rx.server, rx.port.toInteger(), rx.type, rx.ssl, rx.username, rx.password) { Message msg ->
                 log.debug "message $msg"
                 if (!msg.isSet(Flags.Flag.SEEN) && !msg.isSet(Flags.Flag.ANSWERED)) {
-                    checkFromRegisteredUser(msg, mlist)
-                    mailReaderService.printMessage(msg)
+                    msg.setFlag(Flags.Flag.SEEN, true)
+                    if(checkFromRegisteredUser(msg, mlist)){
+                        mailReaderService.printMessage(msg)
+                        mailout(msg, mlist)
+                    }
                 }
             }
         }
@@ -55,5 +65,42 @@ class MailingListService {
             }
         }
         return true
+    }
+
+    def listHeaders(MailingList mlist) {
+        def siteUrl = '<' + grails.serverURL + '>' //todo fixme
+        def headers = [
+            'List-Post': "<mailto:$mlist.rxMailServer.email>",
+            'List-Help': siteUrl,
+            'List-Unsubscribe':  siteUrl,
+            'List-Subscribe':  siteUrl,
+            'List-Id': "$mlist.name <"+ mlist.rxMailServer.email.replaceAll('@', '.') +">",
+            'Sender': "bounces-$mlist.rxMailServer.email",
+            'Errors-To': "bounces-$mlist.rxMailServer.email",
+            'Return-Path': "bounces-$mlist.rxMailServer.email"
+        ]
+    }
+
+
+    def mailout(Message msg, MailingList mlist) {
+        def listHeaders = listHeaders(mlist)
+        def subject = msg.subject.contains("[$mlist.name]") ? msg.subject : "[$mlist.name] $msg.subject"
+        def details = [
+            'headers': listHeaders,
+            'from': msg.from[0],
+            'to': [new InternetAddress(mlist.rxMailServer.email, mlist.name)],
+            'subject': subject
+        ]
+
+        def addresses = []
+        mlist.users.each {user->
+            addresses.add(new InternetAddress(user.email, "$user.firstName $user.lastName"))
+        }
+        mailReaderService.send(mlist.txMailServer.server, mlist.txMailServer.port,
+            mlist.txMailServer.ssl,
+            mlist.txMailServer.username, mlist.txMailServer.password,
+            details,
+            msg.getContent(), msg.getContentType(),
+            addresses)
     }
 }

@@ -55,6 +55,13 @@ limitations under the License.
         </tr>
 
         <tr class="prop">
+          <td valign="top" class="name"><g:message code="mailAccount.email.label" default="email" /></td>
+
+        <td valign="top" class="value">${fieldValue(bean: mailAccountInstance, field: "email")}</td>
+
+        </tr>
+
+        <tr class="prop">
           <td valign="top" class="name"><g:message code="mailAccount.server.label" default="Server" /></td>
 
         <td valign="top" class="value">${fieldValue(bean: mailAccountInstance, field: "server")}</td>

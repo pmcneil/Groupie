@@ -44,6 +44,8 @@ limitations under the License.
 
         <g:sortableColumn property="name" title="${message(code: 'mailAccount.name.label', default: 'Name')}" />
 
+        <g:sortableColumn property="email" title="${message(code: 'mailAccount.email.label', default: 'email')}" />
+
         <g:sortableColumn property="server" title="${message(code: 'mailAccount.server.label', default: 'Server')}" />
 
         <g:sortableColumn property="username" title="${message(code: 'mailAccount.username.label', default: 'Username')}" />
@@ -61,6 +63,8 @@ limitations under the License.
             <td><g:link action="show" id="${mailAccountInstance.id}">${fieldValue(bean: mailAccountInstance, field: "id")}</g:link></td>
 
           <td>${fieldValue(bean: mailAccountInstance, field: "name")}</td>
+
+          <td>${fieldValue(bean: mailAccountInstance, field: "email")}</td>
 
           <td>${fieldValue(bean: mailAccountInstance, field: "server")}</td>
 

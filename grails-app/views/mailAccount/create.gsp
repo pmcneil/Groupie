@@ -55,6 +55,15 @@ limitations under the License.
           </tr>
 
           <tr class="prop">
+              <td valign="top" class="name">
+                <label for="email"><g:message code="mailAccount.email.label" default="email" /></label>
+              </td>
+              <td valign="top" class="value ${hasErrors(bean: mailAccountInstance, field: 'name', 'errors')}">
+                <g:textField name="email" maxlength="100" value="${mailAccountInstance?.email}" />
+              </td>
+          </tr>
+
+          <tr class="prop">
             <td valign="top" class="name">
               <label for="server"><g:message code="mailAccount.server.label" default="Server" /></label>
             </td>
