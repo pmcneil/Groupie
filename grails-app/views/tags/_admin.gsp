@@ -89,7 +89,7 @@
           <a href="#"
              onclick="EIP.boxyTag('${page.item.id}');"
              title="Tag content">
-            <p:image src="icons/silk/comment.png" alt="Tag"/>
+            <util:image src="icons/silk/comment.png" alt="Tag"/>
             <span class="long">Tag</span>
           </a>
         </g:if>

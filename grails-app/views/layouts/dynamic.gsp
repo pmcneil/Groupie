@@ -5,7 +5,7 @@
 
     Licensed under the Apache License, Version 2.0 (the "License"); you may not 
     use this file except in compliance with the License. You may obtain a copy 
-    of the License at http://www.apache.org/licenses/LICENSE-2.0 
+    of the License at http://www.apache.org/licenses/LICENSE-2.0
     
     Unless required by applicable law or agreed to in writing, software 
     distributed under the License is distributed on an "AS IS" BASIS, 
@@ -22,36 +22,36 @@
     <feed:meta kind="atom" version="1.0" controller="feed" action="atom"/>
 
     <META http-equiv="Content-Style-Type" content="text/css">
-  <p:css name="reset" />
-  <p:css name="base" />
-  <p:css name="fonts" />
-  <p:css name="droppy" />
-  <p:css name="boxy" />
-  <p:css name="groupie" />
-  <p:css name="jquery.timeentry" />
-  <p:css name="smoothness/jquery-ui-1.7.2.custom" />
+    <util:css name="reset" />
+    <util:css name="base" />
+    <util:css name="fonts" />
+    <util:css name="droppy" />
+    <util:css name="boxy" />
+    <util:css name="groupie" />
+    <util:css name="jquery.timeentry" />
+    <util:css name="smoothness/jquery-ui-1.7.2.custom" />
 
-  <groupie:favicon src="images/icon32.png"/>
+    <groupie:favicon src="images/icon32.png"/>
 
-  <p:javascript src="jquery/jquery-1.4"/>
-  <p:javascript src="jquery/jquery.droppy"/>
-  <p:javascript src="jquery/jquery.boxy"/>
-  <p:javascript src="ajaxupload.3.5"/>
-  <p:javascript src="jquery/jquery.media"/>
-  <p:javascript src="jquery/jquery.jSuggest.1.0"/>
-  <p:javascript src="jquery/jquery.timeentry.min"/>
-  <p:javascript src="jquery/jquery-ui-1.7.2.custom.min"/>
+    <util:javascript src="jquery/jquery-1.4"/>
+    <util:javascript src="jquery/jquery.droppy"/>
+    <util:javascript src="jquery/jquery.boxy"/>
+    <util:javascript src="ajaxupload.3.5"/>
+    <util:javascript src="jquery/jquery.media"/>
+    <util:javascript src="jquery/jquery.jSuggest.1.0"/>
+    <util:javascript src="jquery/jquery.timeentry.min"/>
+    <util:javascript src="jquery/jquery-ui-1.7.2.custom.min"/>
 
   <!--[if IE]>
-    <p:javascript src="excanvas/excanvas"/>
+    <util:javascript src="excanvas/excanvas"/>
   <![endif]-->
 
   <g:if test="${model?.writable}">
-    <p:javascript  src="edit_area/edit_area_full"/>
-    <p:javascript  src="editpage" />
-    <p:css name="editpage" />
+    <util:javascript  src="edit_area/edit_area_full"/>
+    <util:javascript  src="editpage" />
+    <util:css name="editpage" />
   </g:if>
-  <p:javascript src="application" />
+  <util:javascript src="application" />
   <g:layoutHead />
 </head>
 <body>

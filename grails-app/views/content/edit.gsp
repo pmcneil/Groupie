@@ -68,7 +68,8 @@
                                     <label for="dateCreated">Date Created:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'dateCreated','errors')}">
-                                    <g:datePicker name="dateCreated" value="${contentInstance?.dateCreated}" precision="minute" ></g:datePicker>
+                                  <input type="hidden" value="${contentInstance?.dateCreated}"/>
+${contentInstance?.dateCreated}
                                 </td>
                             </tr> 
                         
@@ -86,7 +87,8 @@
                                     <label for="lastUpdated">Last Updated:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'lastUpdated','errors')}">
-                                    <g:datePicker name="lastUpdated" value="${contentInstance?.lastUpdated}" precision="minute" ></g:datePicker>
+                                  <input type="hidden" value="${contentInstance?.lastUpdated}"/>
+${contentInstance?.lastUpdated}
                                 </td>
                             </tr> 
                         

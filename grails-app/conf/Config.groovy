@@ -92,11 +92,3 @@ log4j = {
     //           'org.springframework.webflow'
 
 }
-//uiperformance.determineVersion = { -> "git rev-list --max-count=1 HEAD".execute().text.trim() }
-//uiperformance.exclusions = [
-//   "**/spinner.gif",
-//   "**/edit_area/**",
-//   "**/images/*",
-//   "**/images/icons/silk/*"
-//]
-//log4j.logger.org.springframework.security='off,stdout'

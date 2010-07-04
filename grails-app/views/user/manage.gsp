@@ -19,17 +19,17 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="layout" content="main" />
-    <p:css name="droppy" />
-    <p:css name="boxy" />
-    <p:css name="groupie" />
-    <p:css name="smoothness/jquery-ui-1.7.2.custom" />
+    <util:css name="droppy" />
+    <util:css name="boxy" />
+    <util:css name="groupie" />
+    <util:css name="smoothness/jquery-ui-1.7.2.custom" />
 
-  <p:javascript src="jquery/jquery.droppy"/>
-  <p:javascript src="jquery/jquery.boxy"/>
-  <p:javascript src="ajaxupload.3.5"/>
-  <p:javascript src="jquery/jquery.media"/>
-  <p:javascript src="jquery/jquery.jSuggest.1.0"/>
-  <p:javascript src="jquery/jquery-ui-1.7.2.custom.min"/>
+  <util:javascript src="jquery/jquery.droppy"/>
+  <util:javascript src="jquery/jquery.boxy"/>
+  <util:javascript src="ajaxupload.3.5"/>
+  <util:javascript src="jquery/jquery.media"/>
+  <util:javascript src="jquery/jquery.jSuggest.1.0"/>
+  <util:javascript src="jquery/jquery-ui-1.7.2.custom.min"/>
 
   <script type="text/javascript">
     function postPost(ret) {
@@ -86,7 +86,7 @@
     </g:if>
 
     <nerderg:inputfield label="Find User" field="userEntry" size="40">
-      <p:image class="imgbutton clearfield" src="icons/silk/cross.png" alt="clear" title="clear search"/>
+      <util:image class="imgbutton clearfield" src="icons/silk/cross.png" alt="clear" title="clear search"/>
     </nerderg:inputfield>
     <hr>
     <div id="userDetails">

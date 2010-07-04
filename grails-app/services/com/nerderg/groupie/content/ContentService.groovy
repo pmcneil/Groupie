@@ -189,7 +189,7 @@ class ContentService {
         }
 
         def newText = cleaner.getInnerHtml(body).trim()
-        newText.replaceAll(/\$/, "&#36;")
+        newText.replaceAll(/\$/, "<span>&#36;</span>")
     }
 
     String embedContent(String text) {

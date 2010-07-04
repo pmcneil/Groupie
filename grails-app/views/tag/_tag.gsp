@@ -37,7 +37,7 @@
                                           function(ret){
                                             jQuery('#tagContent').replaceWith(ret);
                                           });">
-        <p:image src="icons/silk/cross.png" />
+        <util:image src="icons/silk/cross.png" />
       </a>
     </span>
   </g:each>

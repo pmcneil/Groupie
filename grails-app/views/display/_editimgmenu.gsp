@@ -28,7 +28,7 @@
       <a href="#"
          onclick="EIP.boxyStylist();"
          title="Edit HTML tag and style">
-        <p:image src="icons/silk/css.png" alt="Stylist"/>
+        <util:image src="icons/silk/css.png" alt="Stylist"/>
         <span class="long">Stylist</span>
         <span class="shortcut">[alt-c]</span>
       </a>

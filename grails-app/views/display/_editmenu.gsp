@@ -27,14 +27,14 @@
     </li>
     <li>
       <a href="#" onclick="EIP.fireChanged(); return false;" title="Save ctrl-s">
-        <p:image src="icons/silk/disk.png" width="16" height="16" alt="ctrl-s"/>
+        <util:image src="icons/silk/disk.png" width="16" height="16" alt="ctrl-s"/>
         <span class="long">Save</span>
         <span class="shortcut">[ctrl-s]</span>
       </a>
     </li>
     <li>
       <a href="#" onclick="EIP.editSource(); return false;" title="Edit source ctrl-e">
-        <p:image src="icons/silk/page_white_code_red.png" alt="ctrl-e"/>
+        <util:image src="icons/silk/page_white_code_red.png" alt="ctrl-e"/>
         <span class="long">Source</span>
         <span class="shortcut">[ctrl-e]</span>
       </a>
@@ -42,14 +42,14 @@
 
     <li>
       <a href="#" onclick="EIP.executeCommand('undo'); return false;" title="Undo ctrl-z">
-        <p:image src="icons/silk/arrow_undo.png" alt="Undo"/>
+        <util:image src="icons/silk/arrow_undo.png" alt="Undo"/>
         <span class="long">Undo</span>
         <span class="shortcut">[ctrl-z]</span>
       </a>
     </li>
     <li>
       <a href="#" onclick="EIP.executeCommand('redo'); return false;" title="Redo ctrl-Z">
-        <p:image src="icons/silk/arrow_redo.png" alt="Redo"/>
+        <util:image src="icons/silk/arrow_redo.png" alt="Redo"/>
         <span class="long">Redo</span>
         <span class="shortcut">[ctrl-Z]</span>
       </a>
@@ -58,7 +58,7 @@
       <a href="#"
          onclick="EIP.boxyRevert();"
          title="Revert content">
-        <p:image src="icons/silk/arrow_switch.png" alt="Revert"/>
+        <util:image src="icons/silk/arrow_switch.png" alt="Revert"/>
         <span class="long">Revert</span>
       </a>
     </li>
@@ -67,7 +67,7 @@
       <a href="#"
          onclick="EIP.boxyTag();"
          title="Tag content">
-        <p:image src="icons/silk/comment.png" alt="Tag"/>
+        <util:image src="icons/silk/comment.png" alt="Tag"/>
         <span class="long">Tag</span>
       </a>
     </li>
@@ -76,7 +76,7 @@
       <a href="#"
          onclick="EIP.boxyInsertMedia();"
          title="Upload/Insert Media">
-        <p:image src="icons/silk/picture_go.png" alt="Upload/Insert Media"/>
+        <util:image src="icons/silk/picture_go.png" alt="Upload/Insert Media"/>
         <span class="long">Media</span>
       </a>
     </li>
@@ -88,7 +88,7 @@
           <a href="#"
              onclick="EIP.boxyStylist();"
              title="Edit HTML tag and style">
-            <p:image src="icons/silk/css.png" alt="Stylist"/>
+            <util:image src="icons/silk/css.png" alt="Stylist"/>
             <span class="long">Stylist</span>
             <span class="shortcut">[alt-c]</span>
           </a>
@@ -147,25 +147,25 @@
       <a class="subMenuHeading" name="edit_justification">Justify</a>
       <ul>
         <li><a href="#" onclick="EIP.executeCommand('justifyleft'); return false;" title="ctrl-left">
-            <p:image src="icons/silk/text_align_left.png" alt="left"/>
+            <util:image src="icons/silk/text_align_left.png" alt="left"/>
             <span class="long">Left</span>
             <span class="shortcut">[ctrl-left]</span>
           </a>
         </li>
         <li><a href="#" onclick="EIP.executeCommand('justifycenter'); return false;" title="ctrl-up">
-            <p:image src="icons/silk/text_align_center.png" alt="center"/>
+            <util:image src="icons/silk/text_align_center.png" alt="center"/>
             <span class="long">Center</span>
             <span class="shortcut">[ctrl-up]</span>
           </a>
         </li>
         <li><a href="#" onclick="EIP.executeCommand('justifyright'); return false;" title="ctrl-right">
-            <p:image src="icons/silk/text_align_right.png" alt="right"/>
+            <util:image src="icons/silk/text_align_right.png" alt="right"/>
             <span class="long">Right</span>
             <span class="shortcut">[ctrl-right]</span>
           </a>
         </li>
         <li><a href="#" onclick="EIP.executeCommand('justifyfull'); return false;" title="ctrl-down">
-            <p:image src="icons/silk/text_align_justify.png" alt="fully justify"/>
+            <util:image src="icons/silk/text_align_justify.png" alt="fully justify"/>
             <span class="long">Full</span>
             <span class="shortcut">[ctrl-down]</span>
           </a>
@@ -210,28 +210,28 @@
       <ul>
         <li>
           <a href="#" onclick="EIP.insertLinkFromSelection(); return false;" title="Link ctrl-`">
-            <p:image src="icons/silk/link.png" alt="ctrl-`"/>
+            <util:image src="icons/silk/link.png" alt="ctrl-`"/>
             <span class="long">Insert Link</span>
             <span class="shortcut">[ctrl-`]</span>
           </a>
         </li>
         <li>
           <a href="#" onclick="EIP.executeCommand('insertunorderedlist'); return false;" title="Bullet list ctrl-*">
-            <p:image src="icons/silk/text_list_bullets.png" alt="ctrl-*"/>
+            <util:image src="icons/silk/text_list_bullets.png" alt="ctrl-*"/>
             <span class="long">Unorderd List</span>
             <span class="shortcut">[ctrl-*]</span>
           </a>
         </li>
         <li>
           <a href="#" onclick="EIP.executeCommand('insertorderedlist'); return false;" title="Numbered list ctrl-#">
-            <p:image src="icons/silk/text_list_numbers.png" alt="ctrl-#"/>
+            <util:image src="icons/silk/text_list_numbers.png" alt="ctrl-#"/>
             <span class="long">Orderd List</span>
             <span class="shortcut">[ctrl-#]</span>
           </a>
         </li>
         <li>
           <a href="#" onclick="EIP.executeCommand('inserthorizontalrule'); return false;" title="Horiz rule ctrl-_">
-            <p:image src="icons/silk/text_horizontalrule.png" alt="ctrl-_"/>
+            <util:image src="icons/silk/text_horizontalrule.png" alt="ctrl-_"/>
             <span class="long">Horiz Rule</span>
             <span class="shortcut">[ctrl-_]</span>
           </a>
@@ -240,14 +240,14 @@
           <a href="#"
              onclick="EIP.boxyInsertContent();"
              title="Insert Content/Menu/Module">
-            <p:image src="icons/silk/brick_go.png" alt="Insert Content/Menu/Module"/>
+            <util:image src="icons/silk/brick_go.png" alt="Insert Content/Menu/Module"/>
             <span class="long">Insert Content</span>
           </a>
         </li>
         <li>
           <a href="#" onclick="EIP.insertContentFromSelection(); return false;"
              title="Insert or create content named from the selection [alt-7]">
-            <p:image src="icons/silk/arrow_in.png" alt="alt-7"/>
+            <util:image src="icons/silk/arrow_in.png" alt="alt-7"/>
             <span class="long">From selection</span>
             <span class="shortcut">[alt-7]</span>
           </a>

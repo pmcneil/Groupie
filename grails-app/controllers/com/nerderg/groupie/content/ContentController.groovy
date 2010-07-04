@@ -82,6 +82,7 @@ class ContentController extends BaseController{
         def contentInstance = Content.get( params.id )
         def author = authenticateService.userDomain()
         log.debug "**** $author - Trying to update content $params.id *****"
+        log.debug params
         if(contentInstance) {
             if(params.version) {
                 def version = params.version.toLong()
