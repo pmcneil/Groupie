@@ -73,7 +73,7 @@ class BootStrap {
         def menu = createContent('Main Menu', 'menu', 'Main Menu', 'text/html',
 """
 <div class="navigation">
-  <ul class="menu">
+  <ul class="dropmenu">
     <groupie:pages name="Main Menu"></groupie:pages>
     <li>
     <a name="sites">sites</a>
