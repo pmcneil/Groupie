@@ -90,7 +90,7 @@
     </nerderg:inputfield>
     <hr>
     <div id="userDetails">
-      <nerderg:logit message="Person is $person"/>
+      <util:logit message="Person is $person"/>
       <g:if test="${person}">
         <g:render template="editInPlace" model="['user':person]"/>
       </g:if>

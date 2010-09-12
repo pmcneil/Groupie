@@ -67,19 +67,19 @@ body {
     color: #ddd;
 }
 
-.menu * a {
+.dropmenu * a {
     text-decoration: none;
 }
 
-.menu * a[name]
+.dropmenu * a[name]
 {
     cursor: default;
 }
-.menu * a.editMode {
+.dropmenu * a.editMode {
     color: red;
 }
 
-.menu a.disabled {
+.dropmenu a.disabled {
     color: #aaa;
 }
 
@@ -93,7 +93,7 @@ body {
 }
 
 .menuSelected,
-.menu a.menuSelected{
+.dropmenu a.menuSelected{
     color: silver;
 }
 #sidebar {

@@ -723,4 +723,5 @@ $(function(){
         var node = EIP.surroundSelection('div');
         EIP.insertContentById($(this.form.item).val(), node);
     });
+    $("div.embeded").not("editable").attr('contenteditable','false');
 });

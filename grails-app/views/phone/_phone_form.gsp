@@ -14,7 +14,7 @@
     limitations under the License.
 --%>
 <%@ page import="com.nerderg.groupie.member.Phone" %>
-<nerderg:logit message="phoneInst: ${inst}"/>
+<util:logit message="phoneInst: ${inst}"/>
 <nerderg:formfield label="Type" field="type" bean="${inst}">
   <g:select from="${com.nerderg.groupie.member.Phone.types}" name="type" value="${inst?.type}" ></g:select>
 </nerderg:formfield>

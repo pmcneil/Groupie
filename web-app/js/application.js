@@ -186,7 +186,7 @@ $(function() {
         Groupie.y = e.pageY;
     });
 
-    $('ul.menu').droppy({
+    $('ul.dropmenu').droppy({
         speed: 10,
         delay: 100
     });
@@ -235,5 +235,4 @@ $(function() {
         changeYear: true
     });
     $('input.time').timeEntry();
-
 });

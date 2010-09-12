@@ -274,40 +274,41 @@ blockquote {
 
 /* Essentials - configure this */
 
-.menu ul { width: 10em; }
-.menu ul ul { left: 10.1em; }
+.dropmenu ul { width: 10em; }
+.dropmenu ul ul { left: 10.1em; }
 
 /* Everything else is theming */
 
-.menu { background-color: \${s2}; height: 2em; display: inline-block;}
-.menu *:hover { background-color: none; }
-.menu a { border-right: 1px solid white; color: white; font-size: 1em; padding: 0.5em; line-height: 1; }
-.menu li { width: 10em; }
-.menu li.hover a { background-color: \${c1}; }
-.menu ul { top: 2.1em; }
-.menu ul li a { background-color: \${c1}; }
-.menu ul a.hover { background-color: \${s2}; }
-.menu ul a { border-bottom: 1px solid white; border-right: none; opacity: 0.9; filter: alpha(opacity=90); }
+.dropmenu { background-color: \${s2}; height: 2em; display: inline-block;}
+.dropmenu *:hover { background-color: none; }
+.dropmenu a { border-right: 1px solid white; color: white; font-size: 1em; padding: 0.5em; line-height: 1; }
+.dropmenu li { width: 10em; }
+.dropmenu li.hover a { background-color: \${c1}; }
+.dropmenu ul { top: 2.1em; }
+.dropmenu ul li a { background-color: \${c1}; }
+.dropmenu ul a.hover { background-color: \${s2}; }
+.dropmenu ul a { border-bottom: 1px solid white; border-right: none; opacity: 0.9; filter: alpha(opacity=90); }
 
-.menu.login { float: right;}
-.menu.admin { float: right;}
+.dropmenu.login { float: right;}
+.dropmenu.admin { float: right;}
 
-.footerMenu .menu.login { float: none; }
-.footerMenu .menu.admin { float: none; }
+.footerMenu .dropmenu.login { float: none; }
+.footerMenu .dropmenu.admin { float: none; }
 
 /* footerMenu */
 .footerMenu {text-align: center; padding: 10px 0;}
-.footerMenu ul.menu { border: 1px \${mutedtext} solid; }
-.footerMenu .menu { display: inline-block; background-color: \${p1}; height: 2.0em; text-align: left;}
-.footerMenu .menu li { width: 10em; }
-.footerMenu .menu ul { top: 2.1em; width: 10em;}
-.footerMenu .menu ul ul { left: 8.1em; top: -1.1em; }
-.footerMenu .menu *:hover { background-color: transparent; }
-.footerMenu .menu a { border: none; color: \${mutedtext}; font-size: 1em; padding: 0.5em; line-height: 1; }
-.footerMenu .menu li.hover a { background-color: \${p1}; }
-.footerMenu .menu ul li a { background-color: \${p1}; }
-.footerMenu .menu ul a.hover { background-color: \${p1}; border: 1px \${mutedtext} solid; }
-.footerMenu .menu ul a {border:  none; opacity: 1.0; filter: alpha(opacity=100);}
+.footerMenu ul.dropmenu { border: 1px \${mutedtext} solid; }
+.footerMenu .dropmenu { display: inline-block; background-color: \${p1}; height: 2.0em; text-align: left;}
+.footerMenu .dropmenu li { width: 10em; }
+.footerMenu .dropmenu ul { top: 2.1em; width: 10em;}
+.footerMenu .dropmenu ul ul { left: 8.1em; top: -1.1em; }
+.footerMenu .dropmenu *:hover { background-color: transparent; }
+.footerMenu .dropmenu a { border: none; color: \${mutedtext}; font-size: 1em; padding: 0.5em; line-height: 1; }
+.footerMenu .dropmenu li.hover a { background-color: \${p1}; }
+.footerMenu .dropmenu ul li a { background-color: \${p1}; }
+.footerMenu .dropmenu ul a.hover { background-color: \${p1}; border: 1px \${mutedtext} solid; }
+.footerMenu .dropmenu ul a {border:  none; opacity: 1.0; filter: alpha(opacity=100);}
+
 /* sidebar menu */
 
 .sidebarMenu {

@@ -18,7 +18,7 @@
 -->
 
 <%@ page contentType="text/html;charset=UTF-8" %>
-<ul class="menu login">
+<ul class="dropmenu login">
   <g:isLoggedIn>
     <li>
       <a href="${g.createLink(controller: 'logout')}" title="Logged in as ${g.loggedInUserInfo(field: "username")}">

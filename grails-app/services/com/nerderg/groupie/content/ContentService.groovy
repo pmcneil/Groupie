@@ -213,6 +213,10 @@ class ContentService {
             if(item) {
                 cleaner.setInnerHtml(div, item.current.content)
                 div.addAttribute('title', item.current.title)
+                if(!itClass.contains(item.type)) {
+                    itClass += " $item.type"
+                    div.attributes.'class' = itClass
+                }
             } else {
                 cleaner.setInnerHtml(div, "$idTxt not found.")
             }

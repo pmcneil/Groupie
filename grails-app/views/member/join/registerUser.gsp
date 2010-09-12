@@ -21,7 +21,7 @@
     <div class="message">${message}</div>
   </g:if>
   
-  <nerderg:logit message="rendering site registration (member)"/>
+  <util:logit message="rendering site registration (member)"/>
 
   <h1>Site registration details</h1>
 

@@ -21,7 +21,7 @@
 <g:if test="${model}">
   <g:ifAnyGranted role="ROLE_ADMIN,ROLE_EDITOR">
     <g:set var="page" value="${model.content}"/>
-    <ul class="menu admin">
+    <ul class="dropmenu admin">
       <li id="AdminMenu">
         <a id="edit_menu" name="edit_menu">edit</a>
         <ul>

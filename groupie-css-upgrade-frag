@@ -1,0 +1,47 @@
+/* remove this after upgrade */
+.dropmenu * a {
+    text-decoration: none;
+}
+
+.dropmenu * a[name]
+{
+    cursor: default;
+}
+.dropmenu * a.editMode {
+    color: red;
+}
+
+.dropmenu a.disabled {
+    color: #aaa;
+}
+
+.dropmenu { display: block; margin: 0; padding: 0; position: relative; }
+.dropmenu li { display: block; list-style: none; margin: 0; padding: 0; float: left; position: relative; }
+.dropmenu a { display: block; }
+.dropmenu ul { display: none; position: absolute; left: 0; margin: 0; padding: 0; }
+* html .dropmenu ul { line-height: 0; } /* IE6 "fix" */
+.dropmenu ul a { zoom: 1; } /* IE6/7 fix */
+.dropmenu ul li { float: none; }
+.dropmenu ul ul { top: 0; }
+
+
+/* Essentials - configure this */
+
+.menu ul { width: 10em; }
+.menu ul ul { left: 10.1em; }
+
+/* Everything else is theming */
+
+.menu { background-color: #FFF; height: 2em; display: inline-block;}
+.menu *:hover { background-color: none; }
+.menu a { border-right: 1px solid white; color: #999; font-size: 1em; padding: 0.5em; line-height: 1; }
+.menu li { width: 10em; }
+.menu li.hover a { background-color: #efe; color: #000; }
+.menu ul { top: 2.1em; }
+.menu ul li a { background-color: #fff; }
+.menu ul a.hover { background-color: #fff; color: #000;}
+.menu ul a { border-bottom: 1px solid white; border-right: none; opacity: 0.9; filter: alpha(opacity=90); }
+
+.menu.login { float: right;}
+.menu.admin { float: right;}
+

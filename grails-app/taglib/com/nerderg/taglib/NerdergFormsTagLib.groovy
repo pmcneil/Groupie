@@ -16,10 +16,13 @@ limitations under the License.
 
 package com.nerderg.taglib
 
+import org.springframework.validation.Errors
+import grails.converters.JSON
+
 class NerdergFormsTagLib {
     static namespace = "nerderg"
 
-    
+
     void outputAttributes(attrs)
     {
         attrs.remove('tagName') // Just in case one is left
@@ -56,17 +59,22 @@ class NerdergFormsTagLib {
      *  field, label, bean
      */
     def inputfield = { attrs, body ->
-        def label = attrs.remove("label").replaceAll('\\n','<br>')
+        def label = attrs.label ? attrs.remove("label").replaceAll('\\n','<br>') : ''
         def delim = attrs.delim ? attrs.delim : ":"
         def bean = attrs.remove("bean")
         def field = attrs.remove("field")
+        def name = attrs.name ? attrs.remove("name") : field
         def type = attrs.remove("type")
         def div = attrs.table ? 'tr' : 'div'
         def span = attrs.table ? 'td' : 'span'
 
-        def err = ""
+        def err = label
+        def errStyle = ""
         try {
-            err = bean ? hasErrors(bean: bean, field: field, 'errors') : ""
+            if(bean?.errors?.hasFieldErrors(field)){
+                errStyle = 'errors'
+                err = g.message(error: bean.errors.getFieldError(field))
+            }
         } catch (e) {
             log.debug "errors error: $e.message"
         }
@@ -86,20 +94,24 @@ class NerdergFormsTagLib {
         if(!type) {
             type = (field == 'passwd' ? "password" : "text")
         }
-        out << """<$div class="prop">
-          <$span class="name">
+        if(label) {
+            out << """<$div class="prop">"""
+            out << """<$span class="name">
             <label for="$field">$label$delim</label>
-          </$span>
-          <$span class="value $err">"""
-        out << """<input type="$type" name="$field" value="$value" """
+          </$span>"""
+        }
+        out <<  """<$span class="value $errStyle" title="$err">"""
+        out << """<input type="$type" name="$name" value="$value" """
         if(!attrs.id) {
-            out << """ id="$field" """
+            out << """ id="$name" """
         }
         outputAttributes(attrs)
         out << "/>"
         out << body()
-        out<< """</$span>
-        </$div>"""
+        out<< """</$span>"""
+        if(label) {
+            out << """</$div>"""
+        }
     }
 
     def datetimefield = { attrs, body ->
@@ -262,19 +274,10 @@ class NerdergFormsTagLib {
     def asJSArray = {attrs ->
         out << "<script type='text/javascript'>\n"
         def items = attrs.items
-        out << attrs.var.toString().encodeAsJavaScript() + " = ["
-        def comma = ''
-        def count = 0
-        items?.each { item ->
-            def data = item.toString().encodeAsJavaScript()
-            out << "$comma\'$data\'"
-            comma = ','
-            if(count++ == 10){
-                out << "\n"
-                count = 0
-            }
-        }
-        out << "]\n</script>"
+        out << attrs.var.toString().encodeAsJavaScript() + " = "
+        def converter = items as JSON
+        out << converter.toString()
+        out << ";\n</script>"
     }
 
 }
