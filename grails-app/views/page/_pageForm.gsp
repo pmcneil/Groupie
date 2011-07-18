@@ -17,7 +17,7 @@
 
 <nerderg:inputfield label="Name" field="name" bean="${pageInst.item}"/>
 
-<nerderg:inputfield label="Tile" field="title" bean="${pageInst}"/>
+<nerderg:inputfield label="Title" field="title" bean="${pageInst}"/>
 
 <nerderg:formfield label="Parent" field="parent" bean="${pageInst.item}">
   <g:select optionKey="id"
